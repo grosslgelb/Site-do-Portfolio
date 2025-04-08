@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site do Portfólio</title>
+  <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Gabriel Gelbcke</h1>
+    <h2>Analista de Sistemas | Técnico em Eletrotécnica | Desenhista AutoCAD 2D</h2>
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="sobre" class="sobremim">
+    <div class="sobremim-conteudo">
+      <img src="Ryan-Gosling-Profile.jpg" class="perfil">
+      <div class="sobremim-texto">
+        <h2>Sobre Mim</h2>
+        <p>Olá! Tenho 22 anos e atualmente curso Análise e Desenvolvimento de Sistemas, área pela qual me interesso especialmente devido à constante evolução tecnológica e às possibilidades de inovação. Sou formado como Técnico em Eletrotécnica, 
+          o que contribuiu para meu raciocínio lógico e visão técnica. Também concluí um curso de AutoCAD 2D e 3D, que ampliou minha capacidade de trabalhar com projetos técnicos e visuais. Estou sempre em busca de novos aprendizados e desafios 
+          que me permitam crescer profissionalmente e aplicar meus conhecimentos de forma prática e criativa. ☝️🤓</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projetos">
+
+      <div class="card">
+        <img src="prototipo.png">
+        <h3>Prototipagem de Aplicativo</h3>
+        <p>Protótipo de um aplicativo ("Game Note") que atua como "Biblioteca" de jogos, criado em equipe através do Figma, com a implementação de um Mapeamento para facilitar a visão da interatividade durante o uso do App.<br><br>
+          Link do Figma: <a href="https://www.figma.com/proto/Q1HfRUn5TFgOmg1PmlQSLW/Trabalho-de-Intera%C3%A7%C3%A3o-Humano---Computador?node-id=3-2&t=zjYa1Ksj9neRGpTj-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank">Acesse aqui</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="image.png">
+        <h3>Colaboração Canal sobre Programação</h3>
+        <p>Através de vídeos curtos e educativos, ensinamos de forma simples e apresentamos as diversas áreas de atuação na T.I., direcionando carreiras e compartilhando conhecimento com todos que desejam aprender.<br><br>
+          Link do canal: <a href="https://www.youtube.com/@GuiadoProgramadorImperito/videos" target="_blank">Acesse aqui</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="Modelo lógico.png">
+        <img src="image2.png">
+        <h3>Experiência com Banco de Dados</h3>
+        <p>Experiência no uso de bancos de dados relacionais, com foco em modelagem, criação e manipulação de dados e desempenho em sistemas de armazenamento utilizando SQL. Já desenvolvi projetos acadêmicos envolvendo a criação de estruturas de dados, 
+          normalização de tabelas e execução de consultas para extração e análise de informações.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="contato">
+      <h2 style="text-align: center; margin-bottom: 20px;">Contato</h2>
+      <p class="contato-texto">Preencha o formulário abaixo para entrar em contato comigo:</p>
+  
+      <form id="cadastro.php">
+        <label for="inome">Nome</label>
+        <input type="text" id="inome" required>
+  
+        <label for="iemail">E-mail</label>
+        <input type="email" id="iemail" required>
+  
+        <label for="imensagem">Mensagem</label>
+        <textarea id="imensagem" rows="5" required></textarea>
+  
+        <button type="submit" class="enviar">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <h4>2025 Gabriel Gelbcke. Todos os direitos reservados.</h4>
+  </footer>
+  
+  <script>
+    // Validação do formulário.
+      document.getElementById('cadastro.php').addEventListener('submit', function(event) {
+      const nome = document.getElementById('inome').value.trim();
+      const email = document.getElementById('iemail').value.trim();
+      const mensagem = document.getElementById('imensagem').value.trim();
+      const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  
+      if (!nome || !emailValido || !mensagem) {
+        alert('Por favor, preencha todos os campos corretamente.');
+        event.preventDefault();
+      } else {
+        alert('Mensagem enviada com sucesso!');
+        event.preventDefault();
+      }
+    });
+
+    const botao = document.querySelector('.enviar');
+    botao.addEventListener('click', () => {
+      botao.classList.add('clicado');
+      setTimeout(() => {
+        botao.classList.remove('clicado');
+      }, 150);
+    });
+  </script>
+
+</body>
+</html>
